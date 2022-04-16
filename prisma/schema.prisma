@@ -25,6 +25,14 @@ model Password {
   userId String @unique
 }
 
+model Redirect {
+  id   String @id @default(cuid())
+  slug String @unique
+  url  String
+  // TODO: attach users to a redirect w/ RBAC?
+}
+
+// TODO: remove
 model Note {
   id    String @id @default(cuid())
   title String
